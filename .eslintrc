@@ -1,0 +1,291 @@
+{
+  "extends": [
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+
+  "settings": {
+    "import/resolve": {
+      "extensions": [".js", ".jsx"],
+      "moduleDirectory": ["./node_modules", "."]
+    }
+  },
+
+  "parser": "babel-eslint",
+
+  "globals": {
+    "__DEV__": false
+  },
+
+  "plugins": [
+    "eslint-plugin-react",
+    "react"
+  ],
+
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "classes": true
+    }
+  },
+
+  "env": {
+    "browser": true,
+    "es6": true,
+    "mocha": true,
+    "node": true
+  },
+
+  "rules": {
+
+    # ESLint rules
+    # for detailed examples see: eslint.org/docs/rules
+    ## Possible errors
+    "no-cond-assign": [1, "always"],
+    "no-console": 1,
+    "no-constant-condition": 1,
+    "no-control-regex": 1,
+    "no-debugger": 1,
+    "no-dupe-args": 2,
+    "no-dupe-keys": 2,
+    "no-duplicate-case": 2,
+    "no-empty": 1,
+    "no-empty-character-class": 1,
+    "no-ex-assign": 2,
+    "no-extra-boolean-cast": 1,
+    "no-extra-parens": 0, #--fix
+    "no-extra-semi": 2, #--fix
+    "no-func-assign": 2,
+    "no-inner-declarations": 1,
+    "no-invalid-regexp": 1,
+    "no-irregular-whitespace": 2,
+    "no-obj-calls": 2,
+    "no-prototype-builtins": 2,
+    "no-regex-spaces": 2,
+    "no-sparse-arrays": 1,
+    "no-template-curly-in-string": 2,
+    "no-unexpected-multiline": 1,
+    "no-unreachable": 1,
+    "no-unsafe-finally": 1,
+    "no-unsafe-negation": 0, #--fix
+    "use-isnan": 2,
+
+    ## Best Practices
+    "array-callback-return": 1,
+    "block-scoped-var": 2,
+    "class-methods-use-this": 1,
+    "complexity": [1, {"max": 4}],
+    "curly": [1, "all"],
+    "default-case": 2,
+    "dot-location": [2, "property"],
+    "dot-notation": 0, #--fix
+    "guard-for-in": 1,
+    "no-alert": 1,
+    "no-caller": 2,
+    "no-case-declarations": 1,
+    "no-div-regex": 1,
+    "no-else-return": 1,
+    "no-empty-function": 1,
+    "no-empty-pattern": 1,
+    "no-eq-null": 1, #Subject to change
+    "no-eval": 2,
+    "no-extend-native": 1,
+    "no-fallthrough": 1,
+    "no-floating-decimal": 1, #--fix
+    "no-global-assign": 1,
+    "no-implicit-coercion": 1,
+    "no-implicit-globals": 1,
+    "no-implied-eval": 1,
+    "no-invalid-this": 1,
+    "no-iterator": 2,
+    "no-lone-blocks": 1,
+    "no-loop-func": 1,
+    "no-magic-numbers": 0, #Subject to change
+    "no-multi-spaces": 1, #--fix
+    "no-multi-str": 1,
+    "no-new-func": 1,
+    "no-new-wrappers": 1,
+    "no-new": 1,
+    "no-octal-escape": 1,
+    "no-param-reassign": 1,
+    "no-proto": 1,
+    "no-redeclare": 2,
+    "no-return-assign": [2, "always"],
+    "no-script-url": 2,
+    "no-self-assign": 1,
+    "no-self-compare": 1,
+    "no-sequences": 1,
+    "no-unmodified-loop-condition": 1,
+    "no-unused-expressions": 1,
+    "no-useless-call": 1,
+    "no-useless-concat": 1,
+    "no-useless-escape": 1,
+    "no-void": 1,
+    "no-warning-comments": [1, {"terms": ["todo"]}],
+    "vars-on-top": 1,
+    "wrap-iife": 1,
+    "yoda": 1,
+
+    ## Variables
+    "no-catch-shadow": 2,
+    "no-delete-var": 2,
+    "no-label-var": 2,
+    "no-restricted-globals": 1,
+    "no-shadow-restricted-names": 2,
+    "no-shadow": 1,
+    "no-undef-init": 1,
+    "no-undef": 1,
+    "no-unused-vars": 1,
+    "no-use-before-define": 2,
+
+    ## Node.js and CommonJS
+    "callback-return": 1,
+    "global-require": 1,
+    "handle-callback-err": 2,
+    "no-mixed-requires": 2,
+    "no-new-require": 1,
+    "no-path-concat": 1,
+    "no-process-env": 1,
+    "no-process-exit": 1,
+    "no-sync": 1,
+
+    ## Stylistic Issues
+    ### Let the controversy begin!
+    "array-bracket-spacing": [1, "always", {"singleValue": true, "objectsInArrays": true, "arraysInArrays": true}], #--fix
+    "block-spacing": 1, #--fix
+    "brace-style": [1, "1tbs", {"allowSingleLine": true}],
+    "comma-dangle": [1, "only-multiline"], #--fix
+    "comma-spacing": 1, #--fix
+    "comma-style": 1, #--fix
+    "computed-property-spacing": 1, #--fix
+    "eol-last": 1, #--fix
+    "func-call-spacing": 1, #--fix
+    "func-names": 0,
+    "func-style": [1, "declaration", {"allowArrowFunctions": true}], #Subject to change
+    "id-blacklist": [1, "err", "*Err", "e", "ex", "cb"],
+    "id-length": 0, #Subject to change
+    "id-match": 0, #Subject to change
+    "indent": [1, 2, {"SwitchCase": 1}], #--fix, Subject to change #http://ukupat.github.io/tabs-or-spaces/
+    "jsx-quotes": 1, #--fix
+    "key-spacing": 1, #--fix
+    "keyword-spacing": 1, #--fix
+    "lines-around-comment": 1,
+    "max-depth": 1,
+    "max-len": 0, #Subject to change
+    "max-lines": 0, #Subject to change
+    "max-nested-callbacks": [1, {"max": 4}],
+    "max-params": [1, {"max": 4}],
+    "max-statements-per-line": [1, {"max": 2}],
+    "new-parens": 1, #--fix
+    "newline-per-chained-call": [1, {"ignoreChainWithDepth": 4}],
+    "no-array-constructor": 1,
+    "no-bitwise": 1,
+    "no-continue": 1,
+    "no-lonely-if": 1,
+    "no-mixed-operators": 1, #Subject to change #Possible conflict with no-extra-parens, referr to docs
+    "no-mixed-spaces-and-tabs": 2,
+    "no-multiple-empty-lines": [1, {"max": 1, "maxEOF": 1, "maxBOF": 0}], #--fix
+    "no-nested-ternary": 1, #wat
+    "no-new-object": 1,
+    "no-trailing-spaces": 1, #--fix
+    "no-underscore-dangle": 1,
+    "no-unneeded-ternary": 1,
+    "no-whitespace-before-property": 1, #--fix
+    "object-curly-spacing": [1, "always", {"objectsInObjects": true, "arraysInObjects": true}], #--fix
+    "quote-props": [1, "as-needed"],
+    "quotes": [1, "single", "avoid-escape"], #--fix
+    "semi-spacing": 1, #--fix
+    "semi": [1, "always"], #--fix
+    "space-before-blocks": 1, #--fix
+    "space-before-function-paren": [1, "never"], #--fix
+    "space-in-parens": 1, #--fix
+    "space-infix-ops": 1, #--fix
+    "space-unary-ops": 1, #--fix
+    "spaced-comment": 1, #--fix
+    "wrap-regex": 1, #--fix
+
+    ## ECMAScript 6
+    "arrow-body-style": [1, "always"],
+    "arrow-parens": 1, #--fix
+    "arrow-spacing": 1, #--fix
+    "constructor-super": 1,
+    "no-class-assign": 1,
+    "no-confusing-arrow": 1,
+    "no-const-assign": 1,
+    "no-dupe-class-members": 1,
+    "no-duplicate-imports": 1,
+    "no-this-before-super": 1,
+    "no-useless-computed-key": 1,
+    "no-useless-constructor": 1,
+    "no-useless-rename": 1, #--fix
+    "no-var": 1, #--fix
+    "object-shorthand": 1, #--fix
+    "prefer-arrow-callback": 1, #--fix
+    "prefer-reflect": 1,
+    "prefer-rest-params": 1,
+    "prefer-spread": 1,
+    "prefer-template": 1,
+    "rest-spread-spacing": 1, #--fix
+    "template-curly-spacing": [1, "always"], #--fix
+
+    #ESLint plugin React
+    ##Supported rules
+    "react/display-name": [ 1, {"ignoreTranspilerName": false }],
+    "react/forbid-prop-types": [1, {"forbid": ["any"]}],
+    "react/no-danger": 1,
+    "react/no-deprecated": 0, #Deprecated
+    "react/no-did-mount-set-state": 1, #Subject to change
+    "react/no-did-update-set-state": 1, #Subject to change
+    "react/no-direct-mutation-state": 1,
+    "react/no-is-mounted": 1,
+    "react/no-multi-comp": 1,
+    "react/no-render-return-value": 1,
+    "react/no-set-state": 0,
+    "react/no-string-refs": 1, #Subject to change
+    "react/no-unknown-property": 1,
+    "react/prefer-es6-class": 1,
+    "react/prefer-stateless-function": 1,
+    "react/prop-types": 1,
+    "react/react-in-jsx-scope": 1,
+    "react/require-optimization": 0, #Subject to change
+    "react/require-render-return": 1,
+    "react/self-closing-comp": 1,
+    "react/sort-comp": 1,
+    "react/sort-prop-types": [1, {"requiredFirst": true}],
+
+    ##JSX-specific rules
+    "react/jsx-boolean-value": 1,
+    "react/jsx-closing-bracket-location": [1, {"selfClosing": "after-props", "nonEmpty": "after-props"}],
+    "react/jsx-curly-spacing": [1, "always"],
+    "react/jsx-equals-spacing": 1,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-first-prop-new-line": [1, "multiline"],
+    "react/jsx-handler-names": 0, #Subject to change
+    "react/jsx-indent": [1, 2],
+    "react/jsx-indent-props": [1, 2],
+    "react/jsx-key": 1,
+    "react/jsx-max-props-per-line": [1, {"maximum": 2}], #Subject to change
+    "react/jsx-no-bind": [1, {"allowArrowFunctions": true}],
+    "react/jsx-no-comment-textnodes": 1,
+    "react/jsx-no-duplicate-props": 1,
+    "react/jsx-no-literals": 1, #Subject to change
+    "react/jsx-no-target-blank": 1,
+    "react/jsx-no-undef": 1,
+    "react/jsx-pascal-case": 1,
+    "react/jsx-sort-props": 0, #Subject to change
+    "react/jsx-space-before-closing": 1,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    "react/jsx-wrap-multilines": 1,
+
+    #ESLint plugin import
+    ##Using reccomended (see: extends at top of file) settings with minor tweaks
+    "import/default": 1,
+    "import/no-unresolved": 1,
+    "import/extensions": [2, {"js": "never", "jsx": "never", "css": "always"}],
+
+  }
+}
