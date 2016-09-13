@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>Custom title</title>
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
     <h1>Groovy!</h1>
     <div>
-      <p>Your current node version is: <script>document.write(process.versions.node)</script>.</p>
-      <p>The boilerplate is running chromium version: <script>document.write(process.versions.chrome)</script>.</p>
-      <p>Current electron version: <script>document.write(process.versions.electron)</script>.</p>
+      <p>Your current node version is: <strong><script>document.write(process.versions.node)</script>.</strong></p>
+      <p>The boilerplate is running chromium version: <strong><script>document.write(process.versions.chrome)</script>.</strong></p>
+      <p>Current electron version: <strong><script>document.write(process.versions.electron)</script>.</strong></p>
     </div>
     <script type="text/javascript" src="./bundle.js"></script>
   </body>

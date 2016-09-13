@@ -1,1 +1,1 @@
-console.log('Currently running basic electron.');
+console.log('Currently running basic electron. This should be logged inside the application');
