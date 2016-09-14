@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Boilerplate code for electron using React and ES6 syntax",
   "main": "electron/main.js",
+  "config": {
+    "port": 5005
+  },
   "scripts": {
-    "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run electron\"",
-    "dev-server": "babel-node tools/devServer.js",
-    "electron": "electron -r babel-register -r babel-polyfill .",
+    "dev": "concurrently --kill-others \"npm run electron\" \"npm run dev-server\" ",
+    "dev-server": "cross-env PORT=%npm_package_config_port% babel-node tools/devServer.js",
+    "electron": "cross-env PORT=%npm_package_config_port% electron -r babel-register -r babel-polyfill .",
     "start": "echo TODO...",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
