@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const CounterPage = () => {
-  return (
-    <div>
-      { 'Home page!' }
-      <input />
-    </div>
-  );
-};
-
-export default CounterPage;
+export default class HomePage extends Component {
+  render() {
+    this.message = 'Time to start your react journey! Have fun :)';
+    return (
+      <div>
+        { this.message }
+      </div>
+    );
+  }
+}
