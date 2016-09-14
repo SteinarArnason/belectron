@@ -5,6 +5,6 @@ import { Router, hashHistory } from 'react-router';
 import routes from './routes';
 
 render(
-  <Router history={hashHistory} routes={routes} />,
+  <Router history={ hashHistory } routes={ routes } />,
   document.getElementById('app')
 );
