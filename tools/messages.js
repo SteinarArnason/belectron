@@ -1,12 +1,10 @@
 /* eslint-disable no-console */
 import colors from 'colors';
 
-const message = () => {
-  console.log(colors.green('-------------------'));
-  console.log(colors.green('      Message      '));
-  console.log(colors.green('-------------------'));
+export const DevStart = () => {
+  console.log(colors.green('-----------------------------\n     Dev Server starting     \n-----------------------------'));
 };
 
-module.exports = {
-  message,
+export const DevStop = () => {
+  console.log(colors.red('-----------------------------\n     Dev Server stopping     \n-----------------------------'));
 };

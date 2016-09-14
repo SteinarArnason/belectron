@@ -148,8 +148,8 @@
     "no-mixed-requires": 2,
     "no-new-require": 1,
     "no-path-concat": 1,
-    "no-process-env": 1,
-    "no-process-exit": 1,
+    "no-process-env": 0,
+    "no-process-exit": 0,
     "no-sync": 1,
 
     ## Stylistic Issues
@@ -247,7 +247,7 @@
     "react/no-string-refs": 1, #Subject to change
     "react/no-unknown-property": 1,
     "react/prefer-es6-class": 1,
-    "react/prefer-stateless-function": 1,
+    "react/prefer-stateless-function": 0,
     "react/prop-types": 1,
     "react/react-in-jsx-scope": 1,
     "react/require-optimization": 0, #Subject to change
