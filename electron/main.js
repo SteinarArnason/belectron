@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
-// const electron = require('electron');
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow } from 'electron'; // eslint-disable-line
 
+// const electron = require('electron');
 // const app = electron.app;
 // const BrowserWindow = electron.BrowserWindow;
 
 let mainWindow;
 
 app.on('ready', () => {
-  console.log('ready!');
+  console.log('ready! ✅');
 
   mainWindow = new BrowserWindow({
     height: 1100,
