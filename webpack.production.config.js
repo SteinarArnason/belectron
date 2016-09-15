@@ -10,8 +10,14 @@ const GLOBALS = {
 };
 
 export default merge(config, {
-  devtool: 'source-map',
+  // devtool: 'source-map',
   target: 'electron-renderer',
+
+  module: {
+    loaders: [
+      { test: /\.jsx?$/, loaders: [ 'babel' ], exclude: /node_modules/ },
+    ],
+  },
 
   entry: [
     'babel-polyfill',
@@ -19,7 +25,7 @@ export default merge(config, {
   ],
 
   output: {
-    publicPath: '../dist',
+    publicPath: '',
   },
 
   plugins: [
