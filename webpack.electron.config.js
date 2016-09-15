@@ -11,32 +11,41 @@ const GLOBALS = {
 
 export default merge(config, {
   devtool: 'source-map',
-  target: 'electron-renderer',
+  target: 'electron-main',
 
   entry: [
     'babel-polyfill',
-    './app/index',
+    './electron/main',
   ],
 
   output: {
-    publicPath: '../dist',
+    publicPath: 'dist',
+    filename: 'main.js',
   },
 
   plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        screw_ie8: true,
-      },
-    }),
+    new webpack.BannerPlugin(
+      'require("source-map-support").install();',
+      { raw: true, entryOnly: false }
+    ),
     new HtmlWebpackPlugin({
-      title: 'Application Title',
+      title: 'Custom template',
       template: path.join(__dirname, './app/template.ejs'),
       filename: 'main.html',
       inject: false,
     }),
     new webpack.DefinePlugin(GLOBALS),
+  ],
+
+  node: {
+    __dirname: false,
+    __filename: false
+  },
+
+  externals: [
+    'source-map-support'
   ],
 
 });
