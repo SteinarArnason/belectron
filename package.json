@@ -4,12 +4,15 @@
   "description": "Boilerplate code for electron using React and ES6 syntax",
   "main": "electron/main.js",
   "config": {
-    "port": 5005
+    "port": 3000
   },
   "scripts": {
-    "dev": "concurrently --kill-others \"npm run electron\" \"npm run dev-server\" ",
+    "development-scripts": "echo",
+    "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run electron\"",
     "dev-server": "cross-env PORT=%npm_package_config_port% babel-node tools/devServer.js",
     "electron": "cross-env PORT=%npm_package_config_port% electron -r babel-register -r babel-polyfill .",
+    "production": "babel-node tools/buildProduction.js",
+    "postproduction": "electron ./dist/main.js",
     "start": "echo TODO...",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -42,6 +45,7 @@
     "eslint-plugin-import": "^1.15.0",
     "eslint-plugin-react": "^6.2.1",
     "express": "^4.14.0",
+    "html-webpack-plugin": "^2.22.0",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.7.0",
     "webpack-hot-middleware": "^2.12.2",
