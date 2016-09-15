@@ -7,6 +7,12 @@ import { app, BrowserWindow } from 'electron'; // eslint-disable-line
 
 let mainWindow;
 
+app.on('window-all-closed', () => {
+  if (process.platform != 'darwin') {
+    app.quit();
+  }
+});
+
 app.on('ready', () => {
   console.log('ready! ✅');
 
@@ -20,7 +26,7 @@ app.on('ready', () => {
   mainWindow.loadURL(`file://${ __dirname }/main.html`);
 
   mainWindow.on('closed', () => {
-    console.log('application closed...');
+    console.log('application closed..');
     mainWindow = null;
   });
 });
