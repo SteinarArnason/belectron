@@ -2,17 +2,16 @@
   "name": "belectron",
   "version": "1.0.0",
   "description": "Boilerplate code for electron using React and ES6 syntax",
-  "main": "electron/main.js",
   "config": {
     "port": 3000
   },
   "scripts": {
-    "development-scripts": "echo",
     "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run electron\"",
     "dev-server": "cross-env PORT=%npm_package_config_port% babel-node tools/devServer.js",
-    "electron": "cross-env PORT=%npm_package_config_port% electron -r babel-register -r babel-polyfill .",
+    "electron": "cross-env PORT=%npm_package_config_port% electron -r babel-register -r babel-polyfill \"./electron/main.js\"",
     "production": "babel-node tools/buildProduction.js",
-    "postproduction": "electron ./dist/main.js",
+    "postproduction": "cp ./electron/package.json dist && electron ./dist/main.js",
+    "build-windows": "cd dist && electron-packager . --platform=win32 --arch=x64 --overwrite",
     "start": "echo TODO...",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
