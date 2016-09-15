@@ -10,8 +10,14 @@ const GLOBALS = {
 };
 
 export default merge(config, {
-  devtool: 'source-map',
+  // devtool: 'source-map',
   target: 'electron-main',
+
+  module: {
+    loaders: [
+      { test: /\.jsx?$/, loaders: [ 'babel' ], exclude: /node_modules/ },
+    ],
+  },
 
   entry: [
     'babel-polyfill',
@@ -26,10 +32,10 @@ export default merge(config, {
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.BannerPlugin(
-      'require("source-map-support").install();',
-      { raw: true, entryOnly: false }
-    ),
+    // new webpack.BannerPlugin(
+    //   'require("source-map-support").install();',
+    //   { raw: true, entryOnly: false }
+    // ),
     new HtmlWebpackPlugin({
       title: 'Custom template',
       template: path.join(__dirname, './app/template.ejs'),
@@ -45,7 +51,7 @@ export default merge(config, {
   },
 
   externals: [
-    'source-map-support'
+    // 'source-map-support'
   ],
 
 });
