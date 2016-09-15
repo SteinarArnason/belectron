@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 const GLOBALS = {
   __DEV__: true,
-  'process.env.NODE_ENV': JSON.stringify('development')
+  'process.env.NODE_ENV': JSON.stringify('development'),
 };
 
 export default merge(config, {
@@ -17,11 +17,24 @@ export default merge(config, {
   entry: [
     'babel-polyfill',
     `webpack-hot-middleware/client?path=http://localhost:${ PORT }/__webpack_hmr`,
-    './app/index'
+    './app/index',
   ],
 
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+        exclude: /node_modules/,
+        query: {
+          presets: [ 'react-hmre' ],
+        },
+      },
+    ],
+  },
+
   output: {
-    publicPath: `http://localhost:${ PORT }/dist/`
+    publicPath: `http://localhost:${ PORT }/dist/`,
   },
 
   plugins: [
