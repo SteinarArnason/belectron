@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run electron\"",
     "dev-server": "cross-env PORT=%npm_package_config_port% babel-node tools/devServer.js",
-    "electron": "cross-env PORT=%npm_package_config_port% electron -r babel-register -r babel-polyfill \"./electron/main.js\"",
+    "electron": "cross-env PORT=%npm_package_config_port% NODE_ENV=development electron -r babel-register -r babel-polyfill \"./electron/main.js\"",
     "production": "babel-node tools/buildProduction.js",
     "postproduction": "cp ./electron/package.json dist && electron ./dist/main.js",
     "build-windows": "cd dist && electron-packager . --platform=win32 --arch=x64 --overwrite",

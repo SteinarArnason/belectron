@@ -1,10 +1,6 @@
 /* eslint-disable no-console */
 import { app, BrowserWindow } from 'electron'; // eslint-disable-line
 
-// const electron = require('electron');
-// const app = electron.app;
-// const BrowserWindow = electron.BrowserWindow;
-
 let mainWindow;
 
 app.on('window-all-closed', () => {
@@ -21,7 +17,9 @@ app.on('ready', () => {
     width: 1800
   });
 
-  mainWindow.openDevTools();
+  if (process.env.NODE_ENV === 'development') {
+    mainWindow.openDevTools();
+  }
 
   mainWindow.loadURL(`file://${ __dirname }/main.html`);
 
