@@ -2,7 +2,7 @@
 
 ## Prerequisites for running this project
 
-This project has been tested on Windows 10 using the following versions without any errors. Newer versions are also likely to work but you can always fallback to the version number specified.
+This project has been tested on Windows 7 & 10 using the following versions without any errors. Newer versions are also likely to work but you can always fallback to the version number specified.
 
 - [NodeJS (v6.4.0)](https://nodejs.org)
 
