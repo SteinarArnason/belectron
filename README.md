@@ -1,5 +1,4 @@
-# belectron
-## Boilerplate code for electron
+# Boilerplate code for electron
 
 ## Prerequisites for running this project
 
