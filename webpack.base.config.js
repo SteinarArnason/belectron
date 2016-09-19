@@ -1,4 +1,7 @@
 import path from 'path';
+import autoprefixer from 'autoprefixer';
+import postcssImport from 'postcss-import';
+import postcssVariables from 'postcss-css-variables';
 
 export default {
   output: {
@@ -11,4 +14,10 @@ export default {
     modulesDirectories: [ 'node_modules', 'app' ],
     extensions: [ '', '.js', '.jsx', '.css' ],
   },
+
+  postcss: [
+    postcssImport({ path: 'app' }),
+    postcssVariables,
+    autoprefixer,
+  ],
 };

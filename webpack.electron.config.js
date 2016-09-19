@@ -1,8 +1,6 @@
-import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import config from './webpack.base.config';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const GLOBALS = {
   __DEV__: false,
@@ -36,12 +34,6 @@ export default merge(config, {
     //   'require("source-map-support").install();',
     //   { raw: true, entryOnly: false }
     // ),
-    new HtmlWebpackPlugin({
-      title: 'Custom template',
-      template: path.join(__dirname, './app/template.ejs'),
-      filename: 'main.html',
-      inject: false,
-    }),
     new webpack.DefinePlugin(GLOBALS),
   ],
 
