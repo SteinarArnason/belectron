@@ -1,5 +1,6 @@
 @import "variables.css";
 
 .greenBackground {
-  background-color: var(--color-green);
+  background-color: black;
+  color: white;
 }
