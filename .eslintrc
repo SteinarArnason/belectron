@@ -8,6 +8,9 @@
     "import/resolve": {
       "extensions": [".js", ".jsx"],
       "moduleDirectory": ["./node_modules", "."]
+    },
+    "import/ignore": {
+      ".css"
     }
   },
 

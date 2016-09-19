@@ -9,6 +9,11 @@ const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('development'),
 };
 
+const cssLoader = 'css-loader?modules' +
+                  '&importLoaders=1' +
+                  '&localIdentName=[path][name]__[local]___[hash:base64:5]' +
+                  '!postcss-loader';
+
 export default merge(config, {
   debug: true,
   devtool: 'cheap-module-eval-source-map',
@@ -30,6 +35,7 @@ export default merge(config, {
           presets: [ 'react-hmre' ],
         },
       },
+      { test: /\.css$/, loaders: [ 'style-loader', cssLoader ] },
     ],
   },
 
