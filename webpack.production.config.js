@@ -12,7 +12,7 @@ const GLOBALS = {
 
 const cssLoader = 'css-loader?modules' +
                   '&importLoaders=1' +
-                  '&localIdentName=[name]__[local]___[hash:base64:5]' +
+                  '&localIdentName=[local]___[hash:base64:5]' +
                   '!postcss-loader';
 
 export default merge(config, {
@@ -49,7 +49,7 @@ export default merge(config, {
       filename: 'main.html',
       inject: false,
     }),
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('bundle.css'),
     new webpack.DefinePlugin(GLOBALS),
   ],
 
