@@ -6,12 +6,15 @@
     "port": 3000
   },
   "scripts": {
-    "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run electron\"",
+    "dev": "run-p -lnr dev-server electron",
     "dev-server": "cross-env PORT=%npm_package_config_port% babel-node tools/devServer.js",
     "electron": "cross-env PORT=%npm_package_config_port% NODE_ENV=development electron -r babel-register -r babel-polyfill \"./electron/main.js\"",
     "production": "babel-node tools/buildProduction.js",
     "postproduction": "cp ./electron/package.json dist && electron ./dist/main.js",
     "build-windows": "cd dist && electron-packager . --platform=win32 --arch=x64 --overwrite",
+    "clean:all": "run-s clean:dist clean:node",
+    "clean:dist": "rimraf dist",
+    "clean:node": "echo This might differ for users not on windows... && rm -rf node_modules",
     "start": "echo TODO...",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -37,7 +40,6 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.14.0",
     "colors": "^1.1.2",
-    "concurrently": "^2.2.0",
     "cross-env": "^2.0.1",
     "css-loader": "^0.25.0",
     "electron-packager": "^8.0.0",
@@ -48,7 +50,7 @@
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
-    "post": "0.0.1",
+    "npm-run-all": "^3.1.0",
     "postcss-css-variables": "^0.5.2",
     "postcss-import": "^8.1.2",
     "postcss-loader": "^0.13.0",
