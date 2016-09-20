@@ -61,7 +61,7 @@ The project is based on the following Github repository: [chentsulin/electron-re
 
 # Notes
 - Be aware that certain packages that this project depends on are subject to updates and could potentially break this build. If this is the case you can either revert said packages to the version specified in the `package.json` file by removing the `^` from the version number or by trying to fix the errors caused by the update.
-  
+
 - I recommend the following community packages for atom:
   - [autocomplete-paths](https://atom.io/packages/autocomplete-paths)
   - [file-icons](https://atom.io/packages/file-icons)
@@ -70,6 +70,7 @@ The project is based on the following Github repository: [chentsulin/electron-re
   - [linter](https://atom.io/packages/linter)
   - [linter-eslint](https://atom.io/packages/linter-eslint)
   - [pigments](https://atom.io/packages/pigments)
+  - [foldername-tabs](https://atom.io/packages/foldername-tabs)
 
 - Other cool community packages for atom:
   - [docblockr](https://atom.io/packages/docblockr)
