@@ -1,0 +1,10 @@
+@import "variables.css";
+
+.h1{
+  font-weight: bold;
+  color: var(--color-bright-red);
+}
+
+.div p {
+  padding-left: 20px;
+}

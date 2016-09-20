@@ -1,0 +1,11 @@
+@import "variables.css";
+
+.div{
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.active {
+  color: var(--color-bright-red);
+}
