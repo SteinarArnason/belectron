@@ -58,6 +58,7 @@ The project is based on the following Github repository: [chentsulin/electron-re
 - [ESLint general rules](http://eslint.org/docs/rules/)
 - [ESLint react rules](https://github.com/yannickcr/eslint-plugin-react)
 - [Electron Fundamentals course](https://www.pluralsight.com/courses/electron-fundamentals)
+- [Electron app using bluetooth - JSConf](https://www.youtube.com/watch?v=QkfXZ2IFIck&index=8&list=PL37ZVnwpeshGtbb-i7WJqtxZhoe5AGIw4)
 
 # Notes
 - Be aware that certain packages that this project depends on are subject to updates and could potentially break this build. If this is the case you can either revert said packages to the version specified in the `package.json` file by removing the `^` from the version number or by trying to fix the errors caused by the update.
